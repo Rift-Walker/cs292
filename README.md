@@ -16,5 +16,7 @@ Assignment 2 Testing Log
   - All four user directories were there
   - Tested sub-directories: cd alice => ls, repeat for other 3 users
     - Specified user file and sub-directories were there
+    - Tested user permissions: ls -la in all four user directories
+      - All permissions correct
 - Tested groups: cat /etc/group
   - Specified user groups CS251 and CS292 were there
