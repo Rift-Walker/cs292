@@ -12,7 +12,7 @@ Assignment 2 Testing Log
   - Manually scrolled to find all four packages installed
 - Tested users: cut -d: -f1 /etc/passwd
   - All four users were there
-- Tested directories: cd/home => ls
+- Tested directories: cd .. => cd/home => ls
   - All four user directories were there
   - Tested sub-directories: cd alice => ls, repeat for other 3 users
     - Specified user file and sub-directories were there
