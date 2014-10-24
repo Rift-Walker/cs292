@@ -1,0 +1,31 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Box selection
+  config.vm.box = "chef/centos-6.5"
+
+  # Virtualbox config
+  config.vm.provider "virtualbox" do |vb|
+  #   vb.gui = true
+     vb.name = "CentOS 6.5 64-bit"
+     vb.memory = 1000
+     vb.cpus = 2
+  end
+ 
+  # Change ssh port
+  config.vm.network "forwarded_port", guest: 22, host: 1235, host_ip: "127.0.0.1", id:'ssh'
+
+  # Host-only Network
+  config.vm.network "private_network", ip: "192.168.33.3", :adapter=>3
+
+  # Shared folder setup
+  config.vm.synced_folder "~/Documents", "/Shared_Documents"
+
+  # Provision with bootstrap.sh
+  config.vm.provision :shell, path: "bootstrap.sh"
+
+end
