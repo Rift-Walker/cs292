@@ -1,0 +1,23 @@
+Steps to write code for this assignment.
+1. vagrant up
+2. vagrant ssh
+3. Write your code in /vagrant/Dockerfile and in /vagrant/my_distributed_application.sh
+4. exit
+5. vagrant halt
+6. Remove .vagrant folder. It is a temporary and hidden folder.
+7. Zip Assignment-3 folder to Assignment-3:<groupid>.zip and upload on OAK for grading.
+
+
+
+Grading: For Undergraduate credits only:
+1. TAs will execute "vagrant up; vagrant ssh" in host machine followed by "sudo docker ps" in the virtual machine.
+2. They will check for container named "cs292" running.
+3. The container should have ACE installed in it and it is sleeping and waking up alternately.
+
+Grading: For Graduate credits only:
+1. TAs will execute "vagrant up; vagrant ssh" in host machine followed by "sudo docker ps" in virtual machine.
+2. They will see five containers named as server1, server2, server3, client1 and client2 running.
+3. They will also see client1 talking to server1 and client2 talking to server2.
+4. After 20s, they will see only four containers namely server1, server3, client1 and client2.
+5. They will also see client1 talking to server3 and client2 talking to server2.
+
